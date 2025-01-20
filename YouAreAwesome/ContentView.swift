@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = "I Am A Programmer!" //@State lets var become changeable, always add private after state so it becomes localized
     var body: some View {
         
         VStack {
@@ -15,10 +16,13 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.orange)
-            Text("I am an app developer!")
+            Text(message)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.red)
+            Button("Click Me!") {
+                message = "Awesome!"
+            }
         }
         .padding()
           
