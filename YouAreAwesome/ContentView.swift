@@ -10,19 +10,33 @@ import SwiftUI
 struct ContentView: View {
     @State private var message = "I Am A Programmer!" //@State lets var become changeable, always add private after state so it becomes localized
     var body: some View {
-        
         VStack {
+            Spacer() //creates evenly distributed space if you add multiple between things
             Image(systemName: "swift")
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.orange)
+                .frame(width: 200, height: 200)
             Text(message)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundStyle(.red)
-            Button("Click Me!") {
-                message = "Awesome!"
+                .font(.title2)
+                .fontWeight(.ultraLight)
+                .foregroundStyle(.black)
+            Spacer()
+            HStack{
+                Button("Awesome") {
+                    message = "Awesome!"
+                }
+                .buttonStyle(.borderedProminent)
+                .font(.title2)
+                .tint(.orange)
+                Button("Great"){
+                    message = "Great!"
+                }
+                .buttonStyle(.borderedProminent)
+                .font(.title2)
+                .tint(.orange)
             }
+  
         }
         .padding()
           
